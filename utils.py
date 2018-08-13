@@ -629,6 +629,7 @@ def _pass_to_dynamo( items, N ,sites = None, group = None ):
     if type(items)==str:
         items = items.split(',')
     conn  =  httplib.HTTPSConnection('dynamo.mit.edu', cert_file = os.getenv('X509_USER_PROXY'), key_file = os.getenv('X509_USER_PROXY'))
+    #print "Svenja user proxy is %s" % os.getenv('X509_USER_PROXY')
     par = {'item' : items, 'site': sites, 'n':N}
     if group:
         par.update( {'group' : group })
